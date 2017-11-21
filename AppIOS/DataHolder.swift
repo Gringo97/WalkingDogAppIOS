@@ -31,7 +31,7 @@ class DataHolder: NSObject {
     
     var arProfile: Array<UserProfile>?
     
-    
+    var usuarioLinkFoto:String?
     var sEmail:String?
     var sPass:String?
     

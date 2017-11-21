@@ -166,7 +166,7 @@ class MessagesController: UITableViewController {
                 return
             }
             
-            let user = UserProfile(values: dictionary)
+            let user = UserProfile(dictionary: dictionary)
             user.id = chatPartnerId
             self.showChatControllerForUser(user)
             
@@ -191,22 +191,31 @@ class MessagesController: UITableViewController {
             //for some reason uid = nil
             return
         }
-        
-        Database.database().reference().child("Profile").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
-            
-            if let dictionary = snapshot.value as? [String: AnyObject] {
-                //                self.navigationItem.title = dictionary["name"] as? String
+        DataHolder.sharedInstance.firDatabaseRef.child("Profile").child(uid).observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
+          let dictionary = snapshot.value as? [String : AnyObject] ?? [:]
+
+          // self.navigationItem.title = dictionary["Name"] as? String
                 print(dictionary)
-                let user = UserProfile(values: dictionary)
                 
-                user.setValuesForKeys(dictionary)
-                self.setupNavBarWithUser(user)
+                let users = UserProfile()
+                users.sName = dictionary["Name"] as! String
+                users.id = dictionary["Id"] as! String
+                users.Registro = dictionary["Conectado"] as! BooleanLiteralType
+                users.sBreed = dictionary["Breed"] as! String
+                users.sType = dictionary["Type"] as! String
+                users.sSoruceImg = dictionary["Photo"] as! String
+                users.iBirthDate = dictionary["Birthdate"] as? Date
+               //users.setValuesForKeys(dictionary)
+                
+                self.setupNavBarWithUser(users )
             }
             
-        }, withCancel: nil)
+        , withCancel: nil)
     }
     
-    
+//    let user = User(dictionary: dictionary)
+//    user.setValuesForKeys(dictionary)
+//    self.setupNavBarWithUser(user)
     
     
     func setupNavBarWithUser(_ user: UserProfile) {
@@ -229,7 +238,9 @@ class MessagesController: UITableViewController {
         profileImageView.contentMode = .scaleAspectFill
         profileImageView.layer.cornerRadius = 20
         profileImageView.clipsToBounds = true
+        DataHolder.sharedInstance.usuarioLinkFoto =  user.sSoruceImg as? String
         if let profileImageUrl = user.sSoruceImg {
+            
             profileImageView.loadImageUsingCacheWithUrlString(profileImageUrl)
         }
         

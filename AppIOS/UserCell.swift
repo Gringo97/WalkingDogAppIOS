@@ -36,9 +36,9 @@ class UserCell: UITableViewCell {
             ref.observeSingleEvent(of: .value, with: { (snapshot) in
                 
                 if let dictionary = snapshot.value as? [String: AnyObject] {
-                    self.textLabel?.text = dictionary["name"] as? String
+                    self.textLabel?.text = dictionary["Name"] as? String
                     
-                    if let profileImageUrl = dictionary["profileImageUrl"] as? String {
+                    if let profileImageUrl = dictionary["Photo"] as? String {
                       self.profileImageView.loadImageUsingCacheWithUrlString(profileImageUrl)
                    }
                 }

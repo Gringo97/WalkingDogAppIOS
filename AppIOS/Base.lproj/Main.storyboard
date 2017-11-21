@@ -333,7 +333,7 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="1Bh-9Y-sZ8"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W62-BC-dXy">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W62-BC-dXy" customClass="MKMapView">
                                 <rect key="frame" x="119" y="28" width="240" height="457"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJ7-t1-XtY">
@@ -472,7 +472,6 @@
         <!--Tab Bar Controller-->
         <scene sceneID="PAH-8k-7xV">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OKX-TT-eJw" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController id="ezJ-U5-WSP" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="g0h-Xz-CsG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -484,6 +483,7 @@
                         <segue destination="NTU-5l-Sbv" kind="relationship" relationship="viewControllers" id="jCK-v0-geM"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OKX-TT-eJw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="906" y="-336"/>
         </scene>

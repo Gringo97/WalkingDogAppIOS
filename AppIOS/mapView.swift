@@ -129,17 +129,17 @@ class mapView: UIViewController, MKMapViewDelegate{
                             print(value["Photo"] as! String)
                             //var RutaImg:String = value["Photo"] as! String
                             //self.descargarImage(ruta:RutaImg)
-                            annotation.title = value["Name"] as! String
+                            annotation.title = value["Name"] as? String
                             annotation.idPin=key
-                            annotation.nameUser = value["Name"] as! String
-                            annotation.breedUser = value["Breed"] as! String
-                            annotation.birthdateUser  = value["BirthDate"] as! String
+                            annotation.nameUser = value["Name"] as? String
+                            annotation.breedUser = value["Breed"] as? String
+                            annotation.birthdateUser  = value["BirthDate"] as? String
                             self.misPines[key!]=annotation
-                          //  annotation.descargarImage(ruta: RutaImg)
+                          // annotation.descargarImage(ruta: RutaImg)
                             self.mapView.addAnnotation(annotation)
-                            //annotation.pinImage = self.ImagenDescarga
+                          //annotation.pinImage = self.ImagenDescarga
                             
-                            //self.mapView(self.mapView, viewFor: annotation)
+                           //self.mapView(self.mapView, viewFor: annotation)
                         })
                     }
                     }
@@ -224,7 +224,7 @@ class mapView: UIViewController, MKMapViewDelegate{
     @IBAction func hablar(){
         Database.database().reference().child("Profile").child((miPinSelect?.idPin)!).observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
             if let value = snapshot.value as? [String:AnyObject] {
-                let user = UserProfile(values:value)
+                let user = UserProfile(dictionary:value)
                 user.id = snapshot.key
                 self.messagesController?.showChatControllerForUser(user)
             }

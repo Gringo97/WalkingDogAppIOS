@@ -102,7 +102,7 @@ class ProfileCreate: UIViewController,UIImagePickerControllerDelegate,UINavigati
         
         
     //SUBIDA FOTO PERFIL A STORAGE
-        rutaImg = String(format:"ProfileImg/%d.jpg",UserID!)
+     rutaImg = String(format:"ProfileImg/%d.jpg",UserID!)
      let imgRefPerfil = DataHolder.sharedInstance.firStorageRef?.child(rutaImg)
      let uploadTask = imgRefPerfil?.putData(imgData!,metadata:nil){
             (metadata,error) in
@@ -115,9 +115,7 @@ class ProfileCreate: UIViewController,UIImagePickerControllerDelegate,UINavigati
     let type = DataHolder.sharedInstance.sType
         let post : [String : Any] = ["Id" : DataHolder.sharedInstance.Usuario?.uid , "Name" : name , "Breed" : breed , "BirthDate" : birthdate.description , "Type" : type,"Photo" : rutaImg, ]
     
-        print(post)
-    //storageRef.child((DataHolder.sharedInstance.Usuario?.uid)!)
-        print((DataHolder.sharedInstance.Usuario?.uid)!)
+       
     databaseRef.child("Profile").child((DataHolder.sharedInstance.Usuario?.uid)!).setValue(post)
     
         if(DataHolder.sharedInstance.sType == "Reptile"){

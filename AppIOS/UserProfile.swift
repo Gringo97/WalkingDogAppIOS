@@ -9,26 +9,45 @@
 import UIKit
 
 class UserProfile: NSObject {
-  
+  var Registro: Bool = false
     var sName:String?
     var sBreed: String?
     var iBirthDate: Date?
     var sType: String?
-    var Registro: BooleanLiteralType = false
+    
     var id:String?
     var sSoruceImg: String?
+
     
    
-    init(values:[String:AnyObject]) {
-       
-        sName = values["Name"] as? String
-        sBreed = values["Breed"] as? String
-        iBirthDate = values["Birthdate"] as? Date
-        sType = values["Type"] as? String
-        sSoruceImg = values["Type"] as? String
-        id = values["id"] as? String
-
+    init(dictionary:[String  : AnyObject]) {
+        self.Registro = (dictionary["Conectado"] as? Bool)!
+         self.sName = dictionary["Name"] as? String
+         self.sBreed = dictionary["Breed"] as? String
+         self.iBirthDate = dictionary["BirthDate"] as? Date
+         self.sType = dictionary["Type"] as? String
+        
+         self.sSoruceImg = dictionary["Photo"] as? String
+         self.id = dictionary["Id"] as? String
+    }
+    
+    override init() {
+        
     }
     
 
 }
+
+
+//class User: NSObject {
+//    var id: String?
+//    var name: String?
+//    var email: String?
+//    var profileImageUrl: String?
+//    init(dictionary: [String: AnyObject]) {
+//        self.id = dictionary["id"] as? String
+//        self.name = dictionary["name"] as? String
+//        self.email = dictionary["email"] as? String
+//        self.profileImageUrl = dictionary["profileImageUrl"] as? String
+//}
+

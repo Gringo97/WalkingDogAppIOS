@@ -82,9 +82,9 @@ class Login: UIViewController {
                              databaseRef.child("Profile").child((DataHolder.sharedInstance.Usuario?.uid)!).updateChildValues(post)
                             self.performSegue(withIdentifier: "Login2", sender: self)
 
-                            print(snapshot.key)
+                            
                         }else{
-                            print((Auth.auth().currentUser?.uid)! + "login2")
+                            
                           
                             
                             databaseRef.child("Profile").child((DataHolder.sharedInstance.Usuario?.uid)!).updateChildValues(post)

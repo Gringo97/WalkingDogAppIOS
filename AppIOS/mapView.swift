@@ -31,9 +31,9 @@ class mapView: UIViewController, MKMapViewDelegate{
     var ImagenDescarga:UIImage?
     let locationManager = CLLocationManager()
      var getMovedMapCenter: CLLocation!
-    
+      var miPinSelect:MiPin?
     var misPines:[String:MiPin]=[:]
-    
+    var messagesController: MessagesController?
     var annotationUser:MiPin?
     var boolCreatedPin:Bool = false
     
@@ -221,6 +221,17 @@ class mapView: UIViewController, MKMapViewDelegate{
 
         //return nil
     }
+    @IBAction func hablar(){
+        Database.database().reference().child("Profile").child((miPinSelect?.idPin)!).observeSingleEvent(of: DataEventType.value, with: { (snapshot) in
+            if let value = snapshot.value as? [String:AnyObject] {
+                let user = UserProfile(values:value)
+                user.id = snapshot.key
+                self.messagesController?.showChatControllerForUser(user)
+            }
+     
+    })
+    }
+    
     
     @IBAction func btnVolver() {
                 let databaseRef = Database.database().reference()
@@ -237,10 +248,10 @@ class mapView: UIViewController, MKMapViewDelegate{
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        let miPinSelect:MiPin = view.annotation as! MiPin
-        lblPopUpName.text = miPinSelect.nameUser
-        lblPopUpBreed.text = miPinSelect.breedUser
-        lblPopUpBirthdate.text = miPinSelect.birthdateUser
+      miPinSelect = view.annotation as! MiPin
+        lblPopUpName.text = miPinSelect?.nameUser
+        lblPopUpBreed.text = miPinSelect?.breedUser
+        lblPopUpBirthdate.text = miPinSelect?.birthdateUser
         
         popUp.isHidden = false
         print("HEY!!!!!!!!! ")

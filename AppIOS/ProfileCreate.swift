@@ -95,6 +95,12 @@ class ProfileCreate: UIViewController,UIImagePickerControllerDelegate,UINavigati
     let databaseRef = Database.database().reference()
     let storageRef = Storage.storage().reference()
         
+        
+        
+        
+        
+        
+        
     //SUBIDA FOTO PERFIL A STORAGE
         rutaImg = String(format:"ProfileImg/%d.jpg",UserID!)
      let imgRefPerfil = DataHolder.sharedInstance.firStorageRef?.child(rutaImg)
@@ -107,7 +113,7 @@ class ProfileCreate: UIViewController,UIImagePickerControllerDelegate,UINavigati
         }
    
     let type = DataHolder.sharedInstance.sType
-        let post : [String : Any] = ["Name" : name , "Breed" : breed , "BirthDate" : birthdate.description , "Type" : type,"Photo" : rutaImg, ]
+        let post : [String : Any] = ["Id" : DataHolder.sharedInstance.Usuario?.uid , "Name" : name , "Breed" : breed , "BirthDate" : birthdate.description , "Type" : type,"Photo" : rutaImg, ]
     
         print(post)
     //storageRef.child((DataHolder.sharedInstance.Usuario?.uid)!)

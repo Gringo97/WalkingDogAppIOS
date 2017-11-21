@@ -21,9 +21,15 @@
 		6186601B1EA8D14C00BD8A50 /* AppIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6186601A1EA8D14C00BD8A50 /* AppIOSUITests.swift */; };
 		619784801EE6D36D00157157 /* mapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6197847F1EE6D36D00157157 /* mapView.swift */; };
 		619784821EE6D7CB00157157 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 619784811EE6D7CB00157157 /* CoreLocation.framework */; };
+		61ABAD011FC45062000E1710 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ABAD001FC45062000E1710 /* Message.swift */; };
+		61ABAD031FC450AD000E1710 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ABAD021FC450AD000E1710 /* UserCell.swift */; };
+		61ABAD051FC452B0000E1710 /* ChatMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61ABAD041FC452B0000E1710 /* ChatMessageCell.swift */; };
 		61E1AFC31F9DD10900AC4D95 /* MiPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BB25FA1EF290A100516C68 /* MiPin.swift */; };
+		61F8569E1FC35CF700400D09 /* MessagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F8569D1FC35CF700400D09 /* MessagesController.swift */; };
 		61FC48631EB1F78000B3CE72 /* ProfileCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FC48621EB1F78000B3CE72 /* ProfileCreate.swift */; };
 		61FC48651EB20E6200B3CE72 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FC48641EB20E6200B3CE72 /* UserProfile.swift */; };
+		61FF4F4F1FC45A4A00F81667 /* ChatLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FF4F4E1FC45A4A00F81667 /* ChatLogController.swift */; };
+		61FF4F511FC45C8200F81667 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61FF4F501FC45C8200F81667 /* Extensions.swift */; };
 		79B5FFE35A4418B4B066F546 /* Pods_AppIOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07B6EDFB50C3369242AA6A3A /* Pods_AppIOSTests.framework */; };
 		B836A83930444ED3C4309B7B /* Pods_AppIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27E04F213C752DAF54B3B7F8 /* Pods_AppIOS.framework */; };
 		BA636B061EBB9A48004F3FB0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA636B051EBB9A48004F3FB0 /* GoogleService-Info.plist */; };
@@ -70,9 +76,15 @@
 		6186601C1EA8D14C00BD8A50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6197847F1EE6D36D00157157 /* mapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mapView.swift; sourceTree = "<group>"; };
 		619784811EE6D7CB00157157 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		61ABAD001FC45062000E1710 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		61ABAD021FC450AD000E1710 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		61ABAD041FC452B0000E1710 /* ChatMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageCell.swift; sourceTree = "<group>"; };
 		61BB25FA1EF290A100516C68 /* MiPin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiPin.swift; sourceTree = "<group>"; };
+		61F8569D1FC35CF700400D09 /* MessagesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesController.swift; sourceTree = "<group>"; };
 		61FC48621EB1F78000B3CE72 /* ProfileCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCreate.swift; sourceTree = "<group>"; };
 		61FC48641EB20E6200B3CE72 /* UserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		61FF4F4E1FC45A4A00F81667 /* ChatLogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogController.swift; sourceTree = "<group>"; };
+		61FF4F501FC45C8200F81667 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9E8D47B8EB7DEE36F4A45422 /* Pods-AppIOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppIOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppIOSTests/Pods-AppIOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BA636B051EBB9A48004F3FB0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CCB950E7016C39E62C81A92E /* Pods_AppIOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppIOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,6 +174,12 @@
 				61FC48621EB1F78000B3CE72 /* ProfileCreate.swift */,
 				6197847F1EE6D36D00157157 /* mapView.swift */,
 				61BB25FA1EF290A100516C68 /* MiPin.swift */,
+				61F8569D1FC35CF700400D09 /* MessagesController.swift */,
+				61ABAD001FC45062000E1710 /* Message.swift */,
+				61ABAD021FC450AD000E1710 /* UserCell.swift */,
+				61ABAD041FC452B0000E1710 /* ChatMessageCell.swift */,
+				61FF4F4E1FC45A4A00F81667 /* ChatLogController.swift */,
+				61FF4F501FC45C8200F81667 /* Extensions.swift */,
 			);
 			path = AppIOS;
 			sourceTree = "<group>";
@@ -510,7 +528,13 @@
 				61FC48631EB1F78000B3CE72 /* ProfileCreate.swift in Sources */,
 				61E1AFC31F9DD10900AC4D95 /* MiPin.swift in Sources */,
 				61FC48651EB20E6200B3CE72 /* UserProfile.swift in Sources */,
+				61F8569E1FC35CF700400D09 /* MessagesController.swift in Sources */,
+				61ABAD051FC452B0000E1710 /* ChatMessageCell.swift in Sources */,
+				61ABAD011FC45062000E1710 /* Message.swift in Sources */,
 				61129C4D1EAFABF4009A6693 /* SingUp.swift in Sources */,
+				61ABAD031FC450AD000E1710 /* UserCell.swift in Sources */,
+				61FF4F511FC45C8200F81667 /* Extensions.swift in Sources */,
+				61FF4F4F1FC45A4A00F81667 /* ChatLogController.swift in Sources */,
 				61865FFD1EA8D14C00BD8A50 /* ViewController.swift in Sources */,
 				61865FFB1EA8D14C00BD8A50 /* AppDelegate.swift in Sources */,
 				61129C471EAFA99F009A6693 /* DataHolder.swift in Sources */,

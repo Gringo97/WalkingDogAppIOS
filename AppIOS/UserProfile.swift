@@ -9,22 +9,26 @@
 import UIKit
 
 class UserProfile: NSObject {
-    
+  
     var sName:String?
     var sBreed: String?
     var iBirthDate: Date?
     var sType: String?
     var Registro: BooleanLiteralType = false
-    
+    var id:String?
     var sSoruceImg: String?
     
    
     init(values:[String:AnyObject]) {
+       
         sName = values["Name"] as? String
         sBreed = values["Breed"] as? String
         iBirthDate = values["Birthdate"] as? Date
         sType = values["Type"] as? String
+        sSoruceImg = values["Type"] as? String
+        id = values["id"] as? String
 
     }
+    
 
 }

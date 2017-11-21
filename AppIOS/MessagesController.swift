@@ -197,15 +197,15 @@ class MessagesController: UITableViewController {
           // self.navigationItem.title = dictionary["Name"] as? String
                 print(dictionary)
                 
-                let users = UserProfile()
-                users.sName = dictionary["Name"] as! String
-                users.id = dictionary["Id"] as! String
-                users.Registro = dictionary["Conectado"] as! BooleanLiteralType
-                users.sBreed = dictionary["Breed"] as! String
-                users.sType = dictionary["Type"] as! String
-                users.sSoruceImg = dictionary["Photo"] as! String
-                users.iBirthDate = dictionary["Birthdate"] as? Date
-               //users.setValuesForKeys(dictionary)
+            let users = UserProfile(dictionary: dictionary)
+//                users.sName = dictionary["Name"] as! String
+//                users.id = dictionary["Id"] as! String
+//                users.Registro = dictionary["Conectado"] as! BooleanLiteralType
+//                users.sBreed = dictionary["Breed"] as! String
+//                users.sType = dictionary["Type"] as! String
+//                users.sSoruceImg = dictionary["Photo"] as! String
+//                users.iBirthDate = dictionary["Birthdate"] as? Date
+               users.setValuesForKeys(dictionary)
                 
                 self.setupNavBarWithUser(users )
             }

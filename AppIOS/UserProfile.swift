@@ -31,11 +31,7 @@ class UserProfile: NSObject {
          self.id = dictionary["Id"] as? String
     }
     
-    override init() {
-        
-    }
-    
-
+   
 }
 
 
